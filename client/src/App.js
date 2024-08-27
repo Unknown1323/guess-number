@@ -17,7 +17,7 @@ function App() {
   const startGame = useCallback(async () => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:3001/start_game");
+      await axios.post("https://guess-number-kgkj.onrender.com/start_game");
       setMessage("Гру розпочато! Введіть число.");
       setGameStarted(true);
       setShowForm(true);
@@ -36,9 +36,12 @@ function App() {
       if (inputValue === "") return;
 
       try {
-        const response = await axios.post("http://localhost:3001/guess", {
-          guess: parseInt(inputValue),
-        });
+        const response = await axios.post(
+          "https://guess-number-kgkj.onrender.com/guess",
+          {
+            guess: parseInt(inputValue),
+          }
+        );
         setMessage(response.data.message);
 
         if (response.data.status === "win") {
