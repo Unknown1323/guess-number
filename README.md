@@ -4,7 +4,7 @@ Create the file `server/.env`
 
 ```
 BOT_TOKEN=your_token
-PORT=your_potr
+PORT=your_port
 ```
 
 Start server:
